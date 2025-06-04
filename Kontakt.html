@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/YOUR-KIT-ID.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Kontakt.css">
+</head>
+<body>
+
+ <header class="header">
+  <div class="nav-wrapper">
+    <a href="Startseit.html" class="logo">MehranWeb</a>
+
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">
+      <span></span>
+      <span></span>
+    </label>
+
+    <nav class="nav-center">
+      <a href="Startseit.html" class="nav-link">Home</a>
+      <a href="Preise.html" class="nav-link">Preise</a>
+      <a href="Kontakt.html" class="nav-link">Kontakt</a>
+    </nav>
+
+    <div class="mobile-menu">
+      <a href="Startseit.html">Home</a>
+      <a href="Preise.html">Preise</a>
+      <a href="Kontakt.html">Kontakt</a>
+    </div>
+  </div>
+</header>
+
+<!-- Kontaktabschnitt -->
+<section class="abschnitt fünf light-bg">
+  <div class="kontakt-container">
+    <div class="kontakt-text">
+       <h2>Bereit für deine eigene professionelle Webseite?</h2> <br>
+  <p>Dann nimm jetzt Kontakt auf – ich freue mich auf dein Projekt!</p> <br><br>
+  <p>📞 0151 23456789</p> <br>
+  <p>✉️ kontakt@mehranweb.de</p>
+    </div>
+    <form class="kontakt-formular" action="https://formspree.io/f/xwpoadde" method="POST">
+  <div class="form-row">
+    <input type="text" name="Vorname" placeholder="Vorname" required>
+    <input type="text" name="Nachname" placeholder="Nachname" required>
+  </div>
+  <div class="form-row">
+    <input type="email" name="email" placeholder="E-Mail" required>
+    <input type="tel" name="Telefon" placeholder="Telefonnummer">
+  </div>
+  <textarea name="Nachricht" placeholder="Nachricht" required></textarea>
+
+  <input type="hidden" name="_subject" value="Neue Nachricht von deiner Website">
+  <input type="hidden" name="_captcha" value="false">
+
+  <button type="submit">Senden</button>
+</form>
+  </div>
+</section>
+
+<footer class="abschnitt sechs light-bg">
+  <p>&copy; 2025 Mehran Habibi – Alle Rechte vorbehalten</p>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.checked = false;
+    });
+  });
+
+  const links = document.querySelectorAll('.nav-link');
+  const path = window.location.pathname;
+
+  links.forEach(link => {
+    if (link.href.includes(path.split('/').pop())) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+</script>
+
+
+
+  
+</body>
+</html>
+

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <title> Webentwickler Kreis Rottweil | Mehran Habibi – Moderne Webseitens</title>
+    <meta name="description" content="Professionelle Webentwicklung und Webdesign für kleine Unternehmen im Kreis Rottweil. Modern, mobilfreundlich und bezahlbar – 
+    Mehran Habibi hilft dir online sichtbar zu werden!">
+    <link rel="stylesheet" href="Startseit.css">
+    <link rel="icon" href="favicon-32x32.png" type="image/x-icon" />
+
+</head>
+<body>
+
+
+<header class="header">
+  <div class="nav-wrapper">
+    <a href="Startseit.html" class="logo">MehranWeb</a>
+
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">
+      <span></span>
+      <span></span>
+    </label>
+
+    <nav class="nav-center">
+      <a href="Startseit.html" class="nav-link">Home</a>
+      <a href="Preise.html" class="nav-link">Preise</a>
+      <a href="Kontakt.html" class="nav-link">Kontakt</a>
+    </nav>
+
+    <div class="mobile-menu">
+      <a href="Startseit.html">Home</a>
+      <a href="Preise.html">Preise</a>
+      <a href="Kontakt.html">Kontakt</a>
+    </div>
+  </div>
+</header>
+
+<!-- Abschnitt 1 – dunkler Hintergrund -->
+<section class="abschnitt eins light-bg">
+  <div class="content">
+    <h1>LASS DIR JETZT DEINE<br>PROFESSIONELLE WEBSEITE ERSTELLEN – FÜR DEIN BUSINESS</h1>
+    <a href="Preise.html" class="cta-underline">Jetzt Paket Auswählen</a>
+  </div>
+</section>
+
+<!-- Abschnitt 2 – heller Hintergrund -->
+<section class="abschnitt zwei light-bg">
+  <div class="content">
+    <h2>Moderne Webseiten für kleine Betriebe.</h2>
+    <p>
+      Du führst einen Handwerksbetrieb oder ein kleines Unternehmen?<br>
+      Ich helfe dir, online sichtbar zu werden – mit einer modernen, mobilfreundlichen und pflegeleichten Webseite.
+    </p>
+    <p class="tagline">Einfach. Bezahlbar. Professionell.</p>
+  </div>
+</section>
+
+<!-- Abschnitt 4 – heller Hintergrund -->
+<section class="abschnitt vier dark-bg">
+  <div class="content">
+    <h1>Warum mit mir arbeiten?</h1>
+    <div class="liste">
+      
+      <ul class="rechts">
+        <li>✓ Mobil-optimiert – sieht auf jedem Gerät gut aus</li>
+        <li>✓ Hosting & Domain-Beratung inklusive</li>
+        <li>✓ Änderungen & Pflege – ich kümmere mich</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Abschnitt 5 – dunkler Hintergrund -->
+<section class="abschnitt fünf light-bg">
+  <div class="kontakt-container">
+    <div class="kontakt-text">
+      <h2>Noch unsicher?  <br> Schreiben Sie mir – ich berate Sie kostenlos <br> zur passenden Lösung.</h2> 
+    </div>
+    <form class="kontakt-formular" action="https://formspree.io/f/xwpoadde" method="POST">
+  <div class="form-row">
+    <input type="text" name="Vorname" placeholder="Vorname" required>
+    <input type="text" name="Nachname" placeholder="Nachname" required>
+  </div>
+  <div class="form-row">
+    <input type="email" name="email" placeholder="E-Mail" required>
+    <input type="tel" name="Telefon" placeholder="Telefonnummer">
+  </div>
+  <textarea name="Nachricht" placeholder="Nachricht" required></textarea>
+
+  <input type="hidden" name="_subject" value="Neue Nachricht von deiner Website">
+  <input type="hidden" name="_captcha" value="false">
+
+  <button type="submit">Senden</button>
+</form>
+
+  </div>
+</section>
+
+<!-- Abschnitt 6 – heller Hintergrund (Footer) -->
+<footer class="abschnitt sechs light-bg">
+  <p>&copy; 2025 Mehran Habibi – Alle Rechte vorbehalten</p>
+</footer>
+
+<script>
+  // Menü schließen bei Klick auf Link
+  const toggle = document.getElementById('menu-toggle');
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.checked = false;
+    });
+  });
+
+  // Hintergrund-Observer für Header-Farbe
+  const header = document.querySelector('.header');
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains('dark-bg')) {
+            header.classList.remove('light-header');
+            header.classList.add('dark-header');
+          } else {
+            header.classList.remove('dark-header');
+            header.classList.add('light-header');
+          }
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  document.querySelectorAll('.section, section').forEach(section => {
+    observer.observe(section);
+  });
+
+
+
+
+
+  const links = document.querySelectorAll('.nav-link');
+  const path = window.location.pathname;
+
+  links.forEach(link => {
+    if (link.href.includes(path.split('/').pop())) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+</script>
+
+
+</body>
+</html>

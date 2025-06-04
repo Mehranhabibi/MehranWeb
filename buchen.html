@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="PW3bPpvg6zMXfQHlP1G9jfRjH6WVVfRWpA2YJm4M7vw" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Preise.css">
+  <link rel="stylesheet" href="buchen.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+
+  <header class="header">
+  <div class="nav-wrapper">
+    <a href="Startseit.html" class="logo">MehranWeb</a>
+
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">
+      <span></span>
+      <span></span>
+    </label>
+
+    <nav class="nav-center">
+      <a href="Startseit.html" class="nav-link">Home</a>
+      <a href="Preise.html" class="nav-link">Preise</a>
+      <a href="Kontakt.html" class="nav-link">Kontakt</a>
+    </nav>
+
+    <div class="mobile-menu">
+      <a href="Startseit.html">Home</a>
+      <a href="Preise.html">Preise</a>
+      <a href="Kontakt.html">Kontakt</a>
+    </div>
+  </div>
+</header>
+
+ 
+
+  <main class="buchen-wrapper">
+    <h1> Unverbindliche Anfrage</h1>
+    <p>Wähle dein Paket und sende mir deine Anfrage. Ich melde mich zeitnah zurück!</p>
+
+    <form action="https://formspree.io/f/xwpoadde" method="POST" class="buchen-formular">
+      <label for="name">Dein Name:</label>
+      <input type="text" name="name" id="name" required />
+
+      <label for="email">Deine E-Mail:</label>
+      <input type="email" name="email" id="email" required />
+
+      <label for="paketwahl">Gewünschtes Paket:</label>
+      <select name="paket" id="paketwahl" required>
+        <option value="">Bitte Paket wählen</option>
+        <option value="Basic">Basic</option>
+        <option value="Standard">Standard</option>
+        <option value="Premium">Premium</option>
+      </select>
+
+      <label for="details">Zusätzliche Wünsche / Infos:</label>
+      <textarea name="details" id="details" rows="6" placeholder="Was genau soll ich für dich umsetzen?"></textarea>
+
+      <button type="submit">Anfrage senden</button>
+    </form>
+  </main>
+
+ 
+
+<section class="sec">
+  <div></div>
+</section>
+
+<!-- Abschnitt 6 – heller Hintergrund (Footer) -->
+<footer class="Footer">
+  <p>&copy; 2025 Mehran Habibi – Alle Rechte vorbehalten</p>
+</footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const paket = params.get("paket");
+    if (paket) {
+      document.querySelector("#paketwahl").value = paket;
+    }
+
+    form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  // handle Formspree API request
+  // dann:
+  form.innerHTML = "<p>Danke für deine Anfrage! Ich melde mich bald.</p>";
+});
+  </script>
+
+</body>
+</html>

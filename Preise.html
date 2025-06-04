@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="PW3bPpvg6zMXfQHlP1G9jfRjH6WVVfRWpA2YJm4M7vw" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+
+
+    <link rel="stylesheet" href="Preise.css">
+    <title>Packete & Preise</title>
+</head>
+<body>
+
+
+<header class="header">
+  <div class="nav-wrapper">
+    <a href="Startseit.html" class="logo">MehranWeb</a>
+
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">
+      <span></span>
+      <span></span>
+    </label>
+
+    <nav class="nav-center">
+      <a href="Startseit.html" class="nav-link">Home</a>
+      <a href="Preise.html" class="nav-link">Preise</a>
+      <a href="Kontakt.html" class="nav-link">Kontakt</a>
+    </nav>
+
+    <div class="mobile-menu">
+      <a href="Startseit.html">Home</a>
+      <a href="Preise.html">Preise</a>
+      <a href="Kontakt.html">Kontakt</a>
+    </div>
+  </div>
+</header>
+
+<section id="preise" class="preise-section">
+  <div class="preise-container">
+    <!-- Basic -->
+    <div class="price-card">
+      <div>
+        <h5 class="title">Basic</h5>
+        <div class="price"><span>€</span><span>49</span><span>/Monat</span></div>
+        <p class="setup">+ einmalig 149 € Einrichtung</p>
+        <ul class="features">
+          <li>✓ 2 Seiten (z. B. Startseite, Kontakt)</li>
+          <li>✓ Mobil-optimiert</li>
+          <li>✓ Hosting inklusive</li>
+          <li>✓ Domain-Beratung</li>
+          <li>✓ Kleine Änderungen (1×/Monat)</li>
+        </ul>
+      </div>
+      <a href="buchen.html" class="button">Unverbindlich anfragen</a>
+    </div>
+
+    <!-- Standard -->
+    <div class="price-card">
+      <div>
+        <h5 class="title">Standard</h5>
+        <div class="price"><span>€</span><span>69</span><span>/Monat</span></div>
+        <p class="setup">+ einmalig 199 € Einrichtung</p>
+        <ul class="features">
+          <li>✓ Bis zu 4 Seiten (z. B. Start, Über uns, Leistungen, Kontakt)</li>
+          <li>✓ Mobil-optimiert</li>
+          <li>✓ Kontaktformular, Google Maps</li>
+          <li>✓ Hosting & SSL inklusive</li>
+          <li>✓ Kleine Änderungen (2×/Monat)</li>
+        </ul>
+      </div>
+      <a href="buchen.html" class="button">Unverbindlich anfragen</a>
+    </div>
+
+    <!-- Premium -->
+    <div class="price-card">
+      <div>
+        <h5 class="title">Premium</h5>
+        <div class="price"><span>€</span><span>89</span><span>/Monat</span></div>
+        <p class="setup">+ einmalig 249 € Einrichtung</p>
+        <ul class="features">
+          <li>✓ Alle Seiten nach Wunsch</li>
+          <li>✓ Mobil- & SEO-optimiert</li>
+          <li>✓ Galerie, FAQ, Blog möglich</li>
+          <li>✓ Monatliche Pflege & Updates</li>
+        </ul>
+      </div>
+      <a href="buchen.html" class="button">Unverbindlich anfragen</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec"> <div> </div> </section>
+
+<footer class="Footer">
+  <p>&copy; 2025 Mehran Habibi – Alle Rechte vorbehalten</p>
+</footer>
+
+<script>
+  // Menü schließen bei Klick auf Link
+  const toggle = document.getElementById('menu-toggle');
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.checked = false;
+    });
+  });
+
+  // Navigation aktiv setzen
+  const links = document.querySelectorAll('.nav-link');
+  const path = window.location.pathname;
+
+  links.forEach(link => {
+    if (link.href.includes(path.split('/').pop())) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+</script>
+
+
+    
+</body>
+</html>
