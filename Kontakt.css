@@ -149,7 +149,7 @@ section.abschnitt {
 .zwei { height: 80vh; background: #000; }
 .drei { height: 105vh; background: #000; }
 .vier { height: 70vh; background: #000; }
-.fünf { height: 90vh; background: #fff; color: #000; }
+.fünf { height: 110vh; background: #fff; color: #000; }
 .sechs { height: 10vh; background: #111; display: flex; justify-content: center; align-items: center; }
 
 /* Abschnitt 1 */
@@ -304,6 +304,7 @@ p {font-weight: 550;}
   }
 
   .kontakt-container {
+    margin-top: 150px;
     margin-top: 50px;
     flex-direction: column;
     align-items: center;
