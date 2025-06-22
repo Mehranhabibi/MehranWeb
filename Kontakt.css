@@ -267,15 +267,15 @@ p {font-weight: 550;}
 
 /* Footer */
 .sechs p {
-  color: white;
-  font-size: 1rem;
+  
+  font-weight: 550;;
 }
 
 /* Responsive Anpassungen */
 @media (max-width: 768px) {
 
   h1, h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .eins h1 {
